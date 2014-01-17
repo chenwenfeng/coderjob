@@ -7,10 +7,14 @@ ParseUtil.add = function(table, json, successCallback, faildCallback) {
   var o = new (Parse.Object.extend(table))();
   o.save(json, {
     success: function(object) {
-      successCallback(object);
+      if(successCallback) {
+        successCallback(object);
+      }
     },
     error: function(object, error) {
-      faildCallback(error);
+      if(faildCallback) {
+        faildCallback(error);
+      }
     }
   })
 };
@@ -20,10 +24,14 @@ ParseUtil.queryById = function(table, id, successCallback, faildCallback) {
   var query = new Parse.Query(Table);
   query.get(id, {
     success: function(object) {
-      successCallback(object);
+      if(successCallback) {
+        successCallback(object);
+      }
     },
     error: function(object, error) {
-      faildCallback(error);
+      if(faildCallback) {
+        faildCallback(error);
+      }
     }
   });
 };
@@ -33,10 +41,41 @@ ParseUtil.fetch = function(table, successCallback, faildCallback) {
   var table = new Table();
   table.fetch({
     success: function(object) {
-      successCallback(object);
+      if(successCallback) {
+        successCallback(object);
+      }
     },
     error: function(object, error) {
+      if(faildCallback) {
+        faildCallback(error);
+      }
+    }
+  });
+};
+
+ParseUtil.removeById = function(table, id, successCallback, faildCallback) {
+  ParseUtil.queryById(table, id, function(o) {
+    o.destroy({
+      success: function(object) {
+        if(successCallback) {
+          successCallback(object);
+        }
+      },
+      error: function(object, error) {
+        if(faildCallback) {
+          faildCallback(error);
+        }
+      }
+    });
+    
+  }, function(error) {
+    if(faildCallback) {
       faildCallback(error);
     }
   });
+};
+
+ParseUtil.query = function(table) {
+  var Table = Parse.Object.extend(table);
+  return new Parse.Query(Table);
 };

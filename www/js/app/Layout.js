@@ -41,9 +41,16 @@ App.Layout.deviceready = function() {
   //   console.log(error);
   // });
 
-  ParseUtil.fetch('test', function(o) {
-    console.log(o);
-  }, function(error) {
-    console.log(error);
-  });
+  // ParseUtil.fetch('test', function(o) {
+  //   console.log(o);
+  // }, function(error) {
+  //   console.log(error);
+  // });
+
+  // ParseUtil.removeById('test', 'U4ubCj4M2d', function(o) {
+  //   console.log(o);
+  // }, function(error) {
+  //   console.log(error);
+  // });
+
 };
