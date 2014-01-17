@@ -29,5 +29,21 @@ App.Layout.init = function() {
 
 App.Layout.deviceready = function() {
   ParseUtil.init();
-  ParseUtil.save();
+  // ParseUtil.add('test', {a:'d'}, function(o) {
+  //   console.log(o.get('a'));
+  // }, function(error) {
+  //   console.log(error);
+  // });
+
+  // ParseUtil.queryById('test', 'U4ubCj4M2d', function(o) {
+  //   console.log(o.get('a'));
+  // }, function(error) {
+  //   console.log(error);
+  // });
+
+  ParseUtil.fetch('test', function(o) {
+    console.log(o);
+  }, function(error) {
+    console.log(error);
+  });
 };
