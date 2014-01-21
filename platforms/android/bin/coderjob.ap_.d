@@ -25,6 +25,7 @@
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/spec \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/spec.html \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/img/logo.png \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/img/avatar.png \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/res/icon \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/res/screen \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/res/icon/bada-wac \
@@ -91,6 +92,7 @@
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/Layout.js \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/ParseUtil.js \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/login.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/layout.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/animate.min.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/ui.css \

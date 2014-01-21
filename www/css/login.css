@@ -1,9 +1,13 @@
 #login-view {
   height: 100%;
   text-align: center;
+  background: #FFF;
 }
-#login-view {
-  
+#login-view .logo {
+  display: none;
+}
+#login-view .top-box {
+  background: #7EAE36;
 }
 #login-view .appname1 {
   font-weight: bold;
@@ -15,16 +19,20 @@
   color: #FFF;
 }
 #login-view .avatar {
-  background: url(../img/avatar.png) no-repeat;
-  width: 200px;
-  height: 200px;
+  background-image: url(../img/avatar.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 30%;
   border-radius: 50%;
   border: 5px solid #FFF;
   margin-bottom: 20px;
 }
 
-#login-view .login-box {
-  background: #FEFEFE;
+#login-view .login-box,
+#login-view .register-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
 }
 #login-view .title {
   color: #9E9FA3;
@@ -40,18 +48,44 @@
 #login-view .email-box .icon,
 #login-view .password-box .icon {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  top: 2px;
+  left: 2px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
   background: #FFF;
 }
-#login-view input {
-  height: 30px;
-  line-height: 30px;
+#login-view .email-input,
+#login-view .password-input {
+  height: 34px;
+  width: 100%;
+  line-height: 34px;
   color: #FFF;
   background: #9E9FA3;
-  padding-left: 50px;
-  border-radius: 30px;
+  padding: 5px 0 5px 0;
+  border-radius: 44px;
+  text-indent: 50px;
+}
+#login-view .login-register-box-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #FEFEFE;
+  height: 300px;
+}
+#login-view .login-register-box {
+  width: 200%;
+  position: absolute;
+  top: 0;
+  -webkit-transition: left .3s ease-in-out;
+  white-space: nowrap;
+}
+#login-view .login-register-box.login {
+  left: 0;
+}
+#login-view .login-register-box.register {
+  left: -100%;
+}
+#login-view .btn {
+  margin-right: 20px;
 }
