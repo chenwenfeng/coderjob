@@ -65,3 +65,20 @@ input:focus {
   height: 100%;
 }
 
+#alert {
+  width: 60%;
+  position: fixed;
+  bottom: 20%;
+  padding: 10px;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: .6;
+  color: #FFF;
+  margin-left: 20%;
+  border-radius: 30px;
+  line-height: 2em;
+  font-size: 0.7em;
+  word-break: break-all;
+  text-align: center;
+}
