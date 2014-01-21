@@ -35,12 +35,16 @@ App.Layout.deviceready = function() {
 App.Layout.autoLogin = function() {
   var user = App.Storage.getJson('user');
   if(user && user.email) {
-    ParseUtil.signin(user.email, user.password, function(user) {
-      $('#login-view').hide();
-      App.indexModule = new App.IndexModule();
-    }, function(error) {
-      App.LoginModule = new App.LoginModule();
-    });
+    // ParseUtil.signin(user.email, user.password, function(user) {
+    //   App.Layout.alert('自动登录成功!');
+    //   App.Util.animate($('#login-view'), 'bounceOut', function() {
+    //     $('#login-view').hide();
+    //     App.indexModule = new App.IndexModule();
+    //   });
+    // }, function(error) {
+    //   App.LoginModule = new App.LoginModule();
+    // });
+    App.indexModule = new App.IndexModule();
   } else {
     App.LoginModule = new App.LoginModule();
   }

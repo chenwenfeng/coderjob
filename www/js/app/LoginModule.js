@@ -1,5 +1,6 @@
 App.LoginModule = function() {
   this.el = $('#login-view');
+  this.el.show();
   this.init();
 };
 

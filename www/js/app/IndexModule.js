@@ -4,3 +4,6 @@ App.IndexModule = function() {
 
   this.init();
 };
+
+App.IndexModule.prototype.init = function() {
+};
