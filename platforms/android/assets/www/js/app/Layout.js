@@ -29,28 +29,40 @@ App.Layout.init = function() {
 
 App.Layout.deviceready = function() {
   ParseUtil.init();
-  // ParseUtil.add('test', {a:'d'}, function(o) {
-  //   console.log(o.get('a'));
-  // }, function(error) {
-  //   console.log(error);
-  // });
-
-  // ParseUtil.queryById('test', 'U4ubCj4M2d', function(o) {
-  //   console.log(o.get('a'));
-  // }, function(error) {
-  //   console.log(error);
-  // });
-
-  // ParseUtil.fetch('test', function(o) {
-  //   console.log(o);
-  // }, function(error) {
-  //   console.log(error);
-  // });
-
-  // ParseUtil.removeById('test', 'U4ubCj4M2d', function(o) {
-  //   console.log(o);
-  // }, function(error) {
-  //   console.log(error);
-  // });
-
+  App.Layout.autoLogin();
 };
+
+App.Layout.autoLogin = function() {
+  var user = App.Storage.getJson('user');
+  if(user && user.email) {
+    // ParseUtil.signin(user.email, user.password, function(user) {
+    //   App.Layout.alert('自动登录成功!');
+    //   App.Util.animate($('#login-view'), 'bounceOut', function() {
+    //     $('#login-view').hide();
+    //     App.indexModule = new App.IndexModule();
+    //   });
+    // }, function(error) {
+    //   App.LoginModule = new App.LoginModule();
+    // });
+    App.indexModule = new App.IndexModule();
+  } else {
+    App.LoginModule = new App.LoginModule();
+  }
+};
+
+App.Layout.alert = function(msg) {
+  var el = $('#alert');
+  el.html(msg);
+  el.show();
+  el.addClass('animated bounceIn');
+  el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
+    setTimeout(function() {
+      el.removeClass('bounceIn')
+      el.addClass('bounceOut');
+      el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
+        el.removeClass('animated bounceOut');
+        el.hide();
+      });
+    }, 2000);
+  });
+}

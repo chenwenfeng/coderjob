@@ -17,24 +17,68 @@
  * under the License.
  */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#7EAE36;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:20px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color:#FFF;
+  font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size:20px;
+  height:100%;
+  margin:0px;
+  padding:0px;
+  text-transform:uppercase;
+  width:100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
+input:focus {
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: #F1F1F1;
+}
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+  background: #7EAE36;
+  color: #FFF;
+  font-size: 1.2em;
+  border-radius: 20px;
+}
+.link {
+  color: #7EAE36;
+  line-height: 40px;
+  font-size: 1em;
+  text-decoration: underline;
+  display: inline-block;
+  vertical-align: top;
+}
 /* Portrait layout (default) */
 .app {
+  height: 100%;
 }
 
+#alert {
+  width: 60%;
+  position: fixed;
+  bottom: 20%;
+  padding: 10px;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: .6;
+  color: #FFF;
+  margin-left: 20%;
+  border-radius: 30px;
+  line-height: 2em;
+  font-size: 0.7em;
+  word-break: break-all;
+  text-align: center;
+}

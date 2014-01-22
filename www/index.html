@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="css/layout.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
   </head>
   <body>
@@ -71,10 +72,39 @@
         </div>
       </div>
       <div id="index-view" style="display:none;">
-        index
+        <div class="header">
+          CODERJOB
+          <div class="logout"></div>
+        </div>
+        <div class="user-info">
+          <div class="base-info">
+            <img class="avatar" src="img/avatar.png" />
+            <div class="email"></div>
+          </div>
+          <div class="job-info">
+            <div class="profile-box">
+              <div class="icon">profile</div>
+              <div class="number">0%</div>
+            </div>
+            <div class="bid-box">
+              <div class="icon">bid</div>
+              <div class="number">0</div>
+            </div>
+            <div class="publish-box">
+              <div class="icon">publish</div>
+              <div class="number">0</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id="alert" style="display:none;"></div>
+    <div id="confirm" style="display:none;">
+      <div class="title">CONFIRM</div>
+      <div class="ok-label">OK</div>
+      <div class="cancel-label">CACNCEL</div>
+    </div>
+    <div id="loading" style="display:none;"></div>
     <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/parse-1.2.16.min.js"></script>

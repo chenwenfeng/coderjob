@@ -79,3 +79,30 @@ ParseUtil.query = function(table) {
   var Table = Parse.Object.extend(table);
   return new Parse.Query(Table);
 };
+
+
+ParseUtil.signup = function(email, password, successCallback, faildCallback) {
+  var user = new Parse.User();
+  user.set('username', email);
+  user.set('password', password);
+   
+  user.signUp(null, {
+    success: function(user) {
+      successCallback(user);
+    },
+    error: function(user, error) {
+      faildCallback(error);
+    }
+  });
+}
+
+ParseUtil.signin = function(email, password, successCallback, faildCallback) {
+  Parse.User.logIn(email, password, {
+    success: function(user) {
+      successCallback(user);
+    },
+    error: function(user, error) {
+      faildCallback(error);
+    }
+  });
+}

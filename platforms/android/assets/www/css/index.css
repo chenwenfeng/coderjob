@@ -1,0 +1,26 @@
+#index-view {
+  
+}
+#index-view .header {
+  height: 80px;
+  line-height: 80px;
+  background: #E8E9ED;
+  font-size: 2em;
+  text-align: center;
+  color: #727377;
+}
+#index-view .avatar {
+  width: 100px;
+  background-image: url(../img/avatar.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 50%;
+  border: 5px solid #7EAE36;
+  display: inline-block;
+}
+#index-view .email {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 100px;
+  height: 100px;
+}

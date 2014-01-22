@@ -4,17 +4,6 @@ App.LoginModule = function() {
   this.init();
 };
 
-App.LoginModule.prototype.show = function() {
-  this.el.show();
-};
-
-App.LoginModule.prototype.hide = function() {
-  var self = this;
-  App.Util.animate(this.el, 'bounceOut', function() {
-    self.el.hide();
-  });
-};
-
 App.LoginModule.prototype.init = function() {
   this.avatar = this.el.find('.avatar');
   this.loginBox = this.el.find('.login-box');
@@ -69,17 +58,11 @@ App.LoginModule.prototype.initLogin = function() {
       return;
     }
     ParseUtil.signin(email, password, function(user) {
-      var json = {'email': email, 'password': password};
-      json.avatar = self.avatar.attr('src');
-      App.Storage.setJson('user', json);
+      App.Storage.setJson('user', {'email': email, 'password': password});
       App.Layout.alert('登录成功!');
       App.Util.animate(self.el, 'bounceOut', function() {
         self.el.hide();
-        if(!App.indexModule) {
-          App.indexViewModule = new App.IndexModule();
-        } else {
-          App.indexViewModule.show();
-        }
+        App.indexModule = new App.IndexModule();
       });
     }, function(error) {
       App.Layout.alert(error.message);
@@ -120,17 +103,11 @@ App.LoginModule.prototype.initRegister = function() {
       return;
     }
     ParseUtil.signup(email, password, function(user) {
-      var json = {'email': email, 'password': password};
-      json.avatar = self.avatar.attr('src');
-      App.Storage.setJson('user', json);
+      App.Storage.setJson('user', {'email': email, 'password': password});
       App.Layout.alert(user.get('username') + '注册成功');
       App.Util.animate(self.el, 'bounceOut', function() {
         self.el.hide();
-        if(!App.indexViewModule) {
-          App.indexViewModule = new App.IndexModule();
-        } else {
-          App.indexViewModule.show();
-        }
+        App.indexView = new App.IndexModule();
       });
     }, function(error) {
       if(error.code == 202) {

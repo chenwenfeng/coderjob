@@ -29,6 +29,7 @@ App.Layout.init = function() {
 
 App.Layout.deviceready = function() {
   ParseUtil.init();
+  App.Layout.confirmInit();
   App.Layout.autoLogin();
 };
 
@@ -44,9 +45,17 @@ App.Layout.autoLogin = function() {
     // }, function(error) {
     //   App.LoginModule = new App.LoginModule();
     // });
-    App.indexModule = new App.IndexModule();
+    if(!App.indexModule) {
+      App.indexViewModule = new App.IndexModule();
+    } else {
+      App.IndexViewModule.show();
+    }
   } else {
-    App.LoginModule = new App.LoginModule();
+    if(!App.LoginViewModule) {
+      App.LoginViewModule = new App.LoginModule();
+    } else {
+      App.LoginViewModule.show();
+    }
   }
 };
 
@@ -54,15 +63,54 @@ App.Layout.alert = function(msg) {
   var el = $('#alert');
   el.html(msg);
   el.show();
-  el.addClass('animated bounceIn');
+  el.addClass('animated fadeIn');
   el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
     setTimeout(function() {
-      el.removeClass('bounceIn')
-      el.addClass('bounceOut');
+      el.removeClass('fadeIn')
+      el.addClass('fadeOut');
       el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
-        el.removeClass('animated bounceOut');
+        el.removeClass('animated fadeOut');
         el.hide();
       });
     }, 2000);
   });
-}
+};
+
+App.Layout.confirmInit = function() {
+  App.Layout.confirm = {};
+  App.Layout.confirm.el = $('#confirm');
+  App.Layout.confirm.title = $('#confirm .title');
+  App.Layout.confirm.okLabel = $('#confirm .ok-label');
+  App.Layout.confirm.cancelLabel = $('#confirm .cancel-label');
+  App.Layout.confirm.okLabel.on('click', function() {
+    App.Layout.confirm.el.addClass('animated bounceOut');
+    App.Layout.confirm.el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
+      App.Layout.confirm.el.removeClass('animated bounceOut');
+      App.Layout.confirm.el.hide();
+      if(App.Layout.confirm.okCallback) {
+        App.Layout.confirm.okCallback();
+      }
+    });
+  });
+  App.Layout.confirm.cancelLabel.on('click', function() {
+    App.Layout.confirm.el.addClass('animated bounceOut');
+    App.Layout.confirm.el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
+      App.Layout.confirm.el.removeClass('animated bounceOut');
+      App.Layout.confirm.el.hide();
+      if(App.Layout.confirm.cancelCallback) {
+        App.Layout.confirm.cancelCallback();
+      }
+    });
+  });
+};
+
+App.Layout.confirmPop = function(title, okLabel, cancelLabel, okCallback, cancelCallback) {
+  App.Layout.confirm.title.html(title || 'CONFIRM');
+  App.Layout.confirm.okLabel.html(okLabel || 'OK');
+  App.Layout.confirm.cancelLabel.html(cancelLabel || 'CANCEL');
+  App.Layout.confirm.el.show();
+  App.Layout.confirm.el.addClass('animated bounceIn');
+  App.Layout.confirm.el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
+    App.Layout.confirm.el.removeClass('animated bounceIn');
+  });
+};

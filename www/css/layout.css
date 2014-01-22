@@ -30,10 +30,12 @@ body {
   height:100%;
   margin:0px;
   padding:0px;
-  text-transform:uppercase;
+  /*text-transform:uppercase;*/
   width:100%;
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: 1;
+  zoom: 0;
 }
 input:focus {
   outline: none;
@@ -81,4 +83,43 @@ input:focus {
   font-size: 0.7em;
   word-break: break-all;
   text-align: center;
+}
+
+#confirm {
+  width: 70%;
+  padding: 10px 0 20px 0;
+  position: fixed;
+  bottom: 40%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  background: #FFF;
+  border: 3px solid #7EAE36;
+  color: #7EAE36;
+  margin-left: 15%;
+  border-radius: 5px;
+  line-height: 2em;
+  font-size: 0.7em;
+  word-break: break-all;
+  z-index: 999;
+}
+#confirm .title {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 50px;
+}
+#confirm .ok-label,
+#confirm .cancel-label {
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+  background: #7EAE36;
+  border-radius: 10px;
+  color: #FFF;
+}
+#confirm .ok-label {
+  margin-right: 20px;
 }

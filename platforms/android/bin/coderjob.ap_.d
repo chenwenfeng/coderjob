@@ -90,11 +90,17 @@
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/zepto.min.js \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/parse-1.2.16.min.js \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/md5.js \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/Util.js \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/IndexModule.js \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/Layout.js \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/Storage.js \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/ParseUtil.js \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/js/app/LoginModule.js \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/login.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/layout.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/animate.min.css \
+/home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/index.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/ui.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/css/reset.css \
 /home/chenwenfeng/work/app/coderjob/platforms/android/assets/www/spec/lib \

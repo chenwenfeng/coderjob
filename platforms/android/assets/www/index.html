@@ -25,37 +25,86 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/ui.css" />
     <link rel="stylesheet" type="text/css" href="css/layout.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
   </head>
   <body>
     <div id="app">
-      <div id="login-view">
-        <img class="logo" src="img/logo.png" />
-        <div><span class="appname1">CODER</span><span class="appname2">JOB</span></div>
-        <img class="avatar" src="img/avatar.png" />
-        <div class="login-box">
-          <div class="title">LOGIN</div>
-          <div class="email-box">
-            <div class="icon"></div>
-            <input type="email" class="email-input" placeholder="email">
+      <div id="login-view" style="display:none;">
+        <div class="top-box">
+          <img class="logo" src="img/logo.png" />
+          <div>
+            <span class="appname1">CODER</span>
+            <span class="appname2">JOB</span>
           </div>
-          <div class="password-box">
-            <div class="icon"></div>
-            <input type="password" class="password-input" placeholder="password">
+          <img class="avatar" src="img/avatar.png" />
+        </div>
+        <div class="login-register-box-wrapper">
+          <div class="login-register-box login">
+            <div class="login-box">
+              <div class="title">LOGIN</div>
+              <div class="email-box">
+                <div class="icon"></div>
+                <input type="email" class="email-input" placeholder="email">
+              </div>
+              <div class="password-box">
+                <div class="icon"></div>
+                <input type="password" class="password-input" placeholder="password">
+              </div>
+              <div class="login-btn btn">LOGIN</div>
+              <div class="register-link link">REGISTER</div>
+            </div><div class="register-box">
+              <div class="title">REGISTER</div>
+              <div class="email-box">
+                <div class="icon"></div>
+                <input type="email" class="email-input" placeholder="email">
+              </div>
+              <div class="password-box">
+                <div class="icon"></div>
+                <input type="password" class="password-input" placeholder="password">
+              </div>
+              <div class="register-btn btn">REGISTER</div>
+              <div class="login-link link">LOGIN</div>
+            </div>
           </div>
-          <button class="login-btn">LOGIN</button>
-          <button class="register-btn">REGISTER</button>
+        </div>
+      </div>
+      <div id="index-view" style="display:none;">
+        <div class="header">CODERJOB</div>
+        <div class="user-info">
+          <div class="base-info">
+            <img class="avatar" src="img/avatar.png" />
+            <div class="email"></div>
+          </div>
+          <div class="job-info">
+            <div class="profile-box">
+              <div class="icon">profile</div>
+            </div>
+            <div class="bid-box">
+              <div class="icon">bid</div>
+              <div class="number">0</div>
+            </div>
+            <div class="publish-box">
+              <div class="icon">publish</div>
+              <div class="number">0</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div id="alert" style="display:none;"></div>
     <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/parse-1.2.16.min.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/app/Layout.js"></script>
+    <script type="text/javascript" src="js/app/Storage.js"></script>
+    <script type="text/javascript" src="js/app/Util.js"></script>
     <script type="text/javascript" src="js/app/ParseUtil.js"></script>
+    <script type="text/javascript" src="js/app/LoginModule.js"></script>
+    <script type="text/javascript" src="js/app/IndexModule.js"></script>
     <script type="text/javascript">
       App.Layout.init();
     </script>
