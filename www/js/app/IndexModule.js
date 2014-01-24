@@ -21,6 +21,8 @@ App.IndexModule.prototype.init = function() {
   var self = this;
   this.emailDom = this.el.find('.email');
   this.avatarDom = this.el.find('.avatar');
+  this.bid = this.el.find('.main .bid');
+  this.publish = this.el.find('.main .publish');
 
   this.logoutDom = this.el.find('.logout');
   this.logoutDom.on('click', function() {
@@ -29,7 +31,7 @@ App.IndexModule.prototype.init = function() {
       if(App.loginViewModule) {
         App.loginViewModule.show();
       } else {
-        App.loginViewModule = new loginModule();
+        App.loginViewModule = new App.LoginModule();
       }
       self.hide();
     });

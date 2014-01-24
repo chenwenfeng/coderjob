@@ -72,7 +72,7 @@ App.Layout.alert = function(msg) {
         el.removeClass('animated fadeOut');
         el.hide();
       });
-    }, 2000);
+    }, 1000);
   });
 };
 
@@ -108,6 +108,8 @@ App.Layout.confirmPop = function(title, okLabel, cancelLabel, okCallback, cancel
   App.Layout.confirm.title.html(title || 'CONFIRM');
   App.Layout.confirm.okLabel.html(okLabel || 'OK');
   App.Layout.confirm.cancelLabel.html(cancelLabel || 'CANCEL');
+  App.Layout.confirm.okCallback = okCallback;
+  App.Layout.confirm.cancelCallback = cancelCallback;
   App.Layout.confirm.el.show();
   App.Layout.confirm.el.addClass('animated bounceIn');
   App.Layout.confirm.el.one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {

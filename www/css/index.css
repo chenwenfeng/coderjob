@@ -38,22 +38,22 @@
 #index-view .email {
   display: inline-block;
   vertical-align: top;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 #index-view .job-info {
   padding: 20px;
 }
 
-#index-view .profile-box,
-#index-view .bid-box,
-#index-view .publish-box {
+#index-view .user-info .profile-box,
+#index-view .user-info .bid-box,
+#index-view .user-info .publish-box {
   display: inline-block;
   vertical-align: top;
   padding: 0 20px;
   text-align: center;
 }
-#index-view .profile-box,
-#index-view .bid-box {
+#index-view .user-info .profile-box,
+#index-view .user-info .bid-box {
   border-right: 2px solid #E8E8E8;
 }
 #index-view .icon {
@@ -61,4 +61,22 @@
   height: 40px;
   line-height: 40px;
   border-radius: 50%;
+}
+#index-view .main .bid-box,
+#index-view .main .publish-box {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+#index-view .bid,
+#index-view .publish {
+  border-radius: 50%;
+  height: 70px;
+  line-height: 70px;
+  width: 70px;
+  border: 15px solid #7EAE36;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.2em;
 }
